@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/materialize.css">
+	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+	<script type="text/javascript" src="js/script.js"></script>
+	<script type="text/javascript" src="js/materialize.js"></script>
+	<script type="text/javascript" src="js/paper.js"></script>
+	<script type="text/javascript" src="js/jscolor.js"></script>
+	<script type="text/paperscript" src="js/drawing.js" canvas="mandalaCanvas">
+</script>
+</head>
+<body>
+	<div class="row fill">
+		<div class="col m2 controls-container fill">
+			<div>
+				<label for="segments">Mirror Segments</label>
+				<input name="segments" id="segments" type="range" value="10" min="1" max="20" step="1" onchange="updateSegments(this.value)"/>
+			</div>
+			<div>
+				<label for="size">Pen Size</label>
+				<input name="size" id="size" type="range" value="10" min="1" max="20" step="1" onchange="updateSize(this.value)"/>
+			</div>
+			<hr>
+			<input class="jscolor" value="000000" onchange="updateColour(this.value)">
+			<hr>
+			<a id="tooltoggle" class="waves-effect grey waves-light btn" onclick="toggleErasure()"><i id="toolIcon" class="material-icons">cake</i></a>
+			<a id="tooltoggle" class="waves-effect grey waves-light btn" onclick="removeAll()"><i id="toolIcon" class="material-icons">clear</i></a>
+		</div>
+		<div class="col m10 canvas-container fill valign-wrapper">
+			<div class="canvas-view valign">
+				<canvas id="mandalaCanvas" resize></canvas>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
