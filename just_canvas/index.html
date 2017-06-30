@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/materialize.css">
+	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+	<script type="text/javascript" src="js/script.js"></script>
+	<script type="text/javascript" src="js/materialize.js"></script>
+	<script type="text/javascript" src="js/paper.js"></script>
+	<script type="text/javascript" src="js/jscolor.js"></script>
+	<script type="text/paperscript" src="js/drawing.js" canvas="mandalaCanvas">
+</script>
+</head>
+<body>
+
+	<div class="modifiersContainer ">
+		<div>
+			<a onclick="toggleModel()" class="btn-floating btn-large waves-effect waves-light red "><i class="material-icons">edit</i></a>
+		</div>
+		<div id="lazyModel">
+			<div class="test">
+				<label for="segments">Mirror Segments</label>
+				<input name="segments" id="segments" type="range" value="10" min="1" max="20" step="1" onchange="updateSegments(this.value)"/>
+				<label for="size">Pen Size</label>
+				<input name="size" id="size" type="range" value="10" min="1" max="20" step="1" onchange="updateSize(this.value)"/>
+				<input class="jscolor" value="000000" onchange="updateColour(this.value)">
+				<a id="tooltoggle" class="waves-effect grey waves-light btn" onclick="toggleErasure()"><i id="toolIcon" class="material-icons">cake</i></a>
+				<a id="tooltoggle" class="waves-effect grey waves-light btn" onclick="removeAll()"><i id="toolIcon" class="material-icons">clear</i></a>
+				<a id="tooltoggle" class="waves-effect grey waves-light btn" onclick="undo()"><i id="toolIcon" class="material-icons">clear</i></a>
+			</div>
+		</div>
+	</div>
+
+ <canvas id="mandalaCanvas" resize="true"></canvas>
+</body>
+</html>
